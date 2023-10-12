@@ -31,10 +31,16 @@ jobs:
     - name: Terraform Plan
       run: terraform plan
 
-    - name: Terraform Destroy
-      run: terraform destroy -auto-approve
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
 
     - name: Terraform Show Output
       run: terraform show -json > tfplan.json
       continue-on-error: true
 
+    - name: Save Terraform State
+      run: |
+        mkdir -p ${{ secrets.TF_STATE_PATH }}
+        mv terraform.tfstate* ${{ secrets.TF_STATE_PATH }}
+      env:
+        TF_STATE_PATH: ${{ github.workspace }}/.terraform
