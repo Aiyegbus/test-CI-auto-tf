@@ -8,6 +8,13 @@ resource "aws_vpc" "example_vpc" {
   cidr_block = "10.0.0.0/16"
 }
 
+#Create a Subnet
+resource "aws_subnet" "example_public_subnet" {
+  vpc_id     = "aws_vpc.example_vpc.id"
+  cidr_block = "10.0.254.0/28"
+}
+
+
 # Create a security group
 resource "aws_security_group" "example_sg" {
   name        = "example-sg"
