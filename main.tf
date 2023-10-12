@@ -48,5 +48,5 @@ resource "aws_instance" "ayo_instance" {
     Name = "ExampleInstance"
   }
 
-  security_groups = [aws_security_group.example_sg.name]
+  // vpc_security_group_id = aws_security_group.example_sg.id
 }
