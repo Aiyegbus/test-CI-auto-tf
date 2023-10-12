@@ -38,7 +38,7 @@ resource "aws_security_group" "example_sg" {
 }
 
 # Create an EC2 instance
-resource "aws_instance" "example_instance" {
+resource "aws_instance" "ayo_instance" {
   ami           = "ami-0f8e81a3da6e2510a" # Amazon Linux 2 AMI in us-west-1
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.example_subnet.id # You'll need to define a subnet
