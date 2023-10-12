@@ -42,7 +42,7 @@ resource "aws_instance" "ayo_instance" {
   ami           = "ami-0f8e81a3da6e2510a" # Amazon Linux 2 AMI in us-west-1
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.example_subnet.id # You'll need to define a subnet
-  key_name      = "ayodemokey"                 # Change this to your key pair name
+  key_name      = "ayonewkey"                  # Change this to your key pair name
 
   tags = {
     Name = "ExampleInstance"
