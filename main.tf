@@ -4,13 +4,13 @@ provider "aws" {
 }
 
 # Create a VPC
-resource "aws_vpc" "example_vpc" {
-  cidr_block = "10.0.0.0/16"
+resource "aws_vpc" "ij_vpc" {
+  cidr_block = "172.16.0.0/16"
 }
 
 #Create a Subnet
 resource "aws_subnet" "example_subnet" {
-  vpc_id     = aws_vpc.example_vpc.id
+  vpc_id     = aws_vpc.ij_vpc.id
   cidr_block = "10.0.254.0/28"
 }
 
@@ -34,7 +34,7 @@ resource "aws_security_group" "example_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  vpc_id = aws_vpc.example_vpc.id
+  vpc_id = aws_vpc.ij_vpc.id
 }
 
 # Create an EC2 instance
