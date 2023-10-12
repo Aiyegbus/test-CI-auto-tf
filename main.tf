@@ -11,7 +11,7 @@ resource "aws_vpc" "ij_vpc" {
 #Create a Subnet
 resource "aws_subnet" "example_subnet" {
   vpc_id     = aws_vpc.ij_vpc.id
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "172.16.0.0/18"
 }
 
 
